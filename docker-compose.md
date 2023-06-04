@@ -1,4 +1,4 @@
-# Docker Compose File für Moodle
+# Dokumentation des Docker Compose File
 
 ## Version
 ```yaml
