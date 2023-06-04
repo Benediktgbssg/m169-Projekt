@@ -52,8 +52,8 @@ services:
 
 <br>
 
-> Der Service moodle verwendet das Image bitnami/moodle:latest und wird immer automatisch neu gestartet. 
-> Der Service ist über den Port 8080 erreichbar. Es werden Umgebungsvariablen für den Datenbankhost, 
+> Der Service moodle verwendet das Image bitnami/moodle:4.2.0 und wird immer automatisch neu gestartet. 
+> Der Service ist über den Port 80 erreichbar. Es werden Umgebungsvariablen für den Datenbankhost, 
 > den Datenbankbenutzer, das Datenbankpasswort und den Datenbanknamen festgelegt. Zudem werden Volumes 
 > für die Moodle-Konfiguration und -Daten definiert. Der Service hängt von mariadb ab, um sicherzustellen, 
 > dass die Datenbank verfügbar ist.
@@ -62,7 +62,7 @@ services:
 ### phpMyAdmin
 
 ```
- phpmyadmin:
+  phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links:
       - mariadb
