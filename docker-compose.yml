@@ -8,7 +8,9 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=moodle
       - MYSQL_ROOT_USER=root
-      - MYSQL_DATABASE=moodle2
+      - MYSQL_DATABASE=moodle
+    networks:
+     - moodlenet
   moodle:
     image: bitnami/moodle:4.2.0
     restart: always
@@ -18,7 +20,9 @@ services:
       - MOODLE_DATABASE_HOST=mariadb
       - MOODLE_DATABASE_USER=root
       - MOODLE_DATABASE_PASSWORD=moodle
-      - MOODLE_DATABASE_NAME=moodle2
+      - MOODLE_DATABASE_NAME=moodle
+    networks:
+     - moodlenet
     volumes:
       - /srv/Configs/Moodle:/bitnami/moodle
       - /srv/Configs/MoodleData:/bitnami/moodledata
@@ -32,6 +36,10 @@ services:
       PMA_HOST: mariadb
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
+    networks:
+     - moodlenet
     restart: always
     ports:
       - 8081:80
+networks:
+ moodlenet:
