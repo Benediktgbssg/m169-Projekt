@@ -8,17 +8,17 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=moodle
       - MYSQL_ROOT_USER=root
-      - MYSQL_DATABASE=moodle
+      - MYSQL_DATABASE=moodle2
   moodle:
-    image: bitnami/moodle:latest
+    image: bitnami/moodle:4.2.0
     restart: always
     ports:
-      - 8080:8080
+      - 80:8080
     environment:
       - MOODLE_DATABASE_HOST=mariadb
       - MOODLE_DATABASE_USER=root
       - MOODLE_DATABASE_PASSWORD=moodle
-      - MOODLE_DATABASE_NAME=moodle
+      - MOODLE_DATABASE_NAME=moodle2
     volumes:
       - /srv/Configs/Moodle:/bitnami/moodle
       - /srv/Configs/MoodleData:/bitnami/moodledata
@@ -26,7 +26,6 @@ services:
       - mariadb
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: pma
     links:
       - mariadb
     environment:
