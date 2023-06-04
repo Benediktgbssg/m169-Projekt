@@ -84,7 +84,7 @@ networks:
 > Der Service phpmyadmin verwendet das Image phpmyadmin/phpmyadmin und wird immer automatisch neu gestartet. 
 > Der Service ist über den Port 8081 erreichbar. Es wird eine Verbindung zu mariadb hergestellt und Umgebungsvariablen 
 > für den Host und den Port von MariaDB festgelegt. Der Service ermöglicht den Zugriff auf die Datenbank über phpMyAdmin.
-> > Ausserdem wir dem Service phpmyadmin auch noch das Netwerk moodlenet zugewiesen.
+> Ausserdem wir dem Service phpmyadmin auch noch das Netwerk moodlenet zugewiesen.
 
 > Dieses Docker Compose File stellt eine Moodle-Instanz mit MariaDB-Datenbank und phpMyAdmin bereit. 
 > Es ermöglicht die einfache Bereitstellung und Verwaltung einer Moodle-Umgebung.
